@@ -10,6 +10,26 @@
     color: rgb(180, 180, 180);
 }
 
+.name-chat{
+    font-size:12px;
+    font-weight: 500;
+}
+
+.sub-name-chat{
+    font-size:10px;
+    color: rgb(168, 168, 168);
+}
+
+.selected{
+    background-color:#dbdbdb;
+}
+
+i {
+    cursor:pointer;
+}
+
+/* ------------- */
+
 body {
     font-family: 'Roboto', sans-serif;
     display: flex;
@@ -37,7 +57,8 @@ body {
 #app-left{
     width: 35%;
     height: 100%;
-    border: 1px solid red;
+    overflow: auto;
+    border-right: 1px solid rgb(194, 194, 194);
 }
 
 /***** USER *****/
@@ -48,6 +69,11 @@ body {
     align-items: center;
     background-color: rgb(243, 243, 243);
     padding: 5px;
+}
+
+.img-user{
+    display: flex;
+    align-items: center;
 }
 
 .img-user img{
@@ -115,23 +141,110 @@ body {
 }
 
 .icon-input-text .input-chat{
+    margin-left:10px;
     border: none;
-    width: 340px;
+    width: 70%;
     height: 100%;
     max-width: 100%;
 }
 
+/***** Chat *****/
 
 
 
+.box-chat{
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    padding: 5px 15px;
+    border-top: 1px solid rgba(228, 228, 228, 0.712);
+}
 
+.box-chat:hover{
+    background-color: #e6e6e6;
+}
 
+.user-chat{
+    display: flex;
+    align-items: center;
+}
 
+.box-chat .user-chat img{
+    height: 40px;
+    border-radius: 50%;
+}
 
+.user-chat-name{
+    margin-left: 15px;
+}
 
-
+.box-chat .time-chat{
+    font-size: 10px;
+    color: rgb(168, 168, 168);
+}
 
 #app-right{
+    display: flex;
+    flex-direction:column;
     width: 65%;
     height: 100%;
+    background-image: url(../img/mine.jpg);
+}
+
+.body-chat{
+    position: relative;
+    height: 100%;
+}
+
+.input-message{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color:rgb(243, 243, 243);
+    height: 40px;
+}
+
+.input-message .message {
+    border: none;
+    width: 80%;
+    border-radius:5px;
+    padding: 7px;
+}
+
+.input-message i{
+    font-size: 20px;
+}
+
+.my-chat{
+    display: flex;
+    flex-direction: column;
+}
+
+.my-chat li{
+    margin:5px 10px;
+    list-style: none;
+}
+
+.my-chat li:first-child{
+    margin-top: 20px;
+}
+
+.my-message{
+    align-self: flex-end;
+    font-size:12px;
+    background-color: #a9ff81de;
+    padding: 8px 10px;
+    border-radius:8px;
+}
+
+.your-message{
+    align-self: flex-start;
+    background-color: #fff;
+    font-size:12px;
+    padding: 6px;
+    border-radius:8px;
 }
