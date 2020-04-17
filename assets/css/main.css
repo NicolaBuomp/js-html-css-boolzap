@@ -4,7 +4,14 @@
     box-sizing: border-box;
 }
 
+/* UTILITY */
+
+.sub-text {
+    color: rgb(180, 180, 180);
+}
+
 body {
+    font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,14 +34,104 @@ body {
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.6);
 }
 
-.side{
+#app-left{
     width: 35%;
     height: 100%;
-    background-color: #adadad;
+    border: 1px solid red;
 }
 
-.side-two{
+/***** USER *****/
+
+.top-bar-user{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(243, 243, 243);
+    padding: 5px;
+}
+
+.img-user img{
+    height: 40px;
+    border-radius: 50%;
+}
+
+.icon-user i{
+    margin-right:10px;
+    font-size:17px;
+    color:rgb(155, 155, 155);
+}
+
+/***** Notifiche *****/
+
+.notification{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(149, 226, 245);
+}
+
+.icon-noti{
+    margin-left:5px;
+    padding:10px;
+    border-radius:50%;
+    background-color: rgba(255, 255, 255, .9);
+}
+
+.icon-noti i{
+    color: rgb(149, 226, 245);
+    font-size: 16px;
+}
+
+.noti-text{
+    margin-left:10px;
+}
+
+.noti-text p{
+    font-size:13px;
+    font-weight:500;
+}
+
+.noti-text a{
+    color:grey;
+    font-size:11px;
+}
+
+/***** Input chat *****/
+
+.input-text{
+    padding:10px;
+    background-color: rgb(243, 243, 243);
+}
+
+.icon-input-text{
+    padding:5px;
+    background-color: #fff;
+}
+
+.icon-input-text i {
+    font-size: 12px;
+    color: grey;
+    padding: 0 15px;
+}
+
+.icon-input-text .input-chat{
+    border: none;
+    width: 340px;
+    height: 100%;
+    max-width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+#app-right{
     width: 65%;
     height: 100%;
-    background-color: #a0a0a0;
 }
