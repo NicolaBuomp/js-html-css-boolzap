@@ -6,6 +6,10 @@
 
 /* UTILITY */
 
+.template{
+    display:none;
+}
+
 .sub-text {
     color: rgb(180, 180, 180);
 }
@@ -27,6 +31,7 @@
 i {
     cursor:pointer;
 }
+
 
 /* ------------- */
 
@@ -58,7 +63,7 @@ body {
     width: 35%;
     height: 100%;
     overflow: auto;
-    border-right: 1px solid rgb(194, 194, 194);
+    border-right: 1px solid rgba(194, 194, 194, .5);
 }
 
 /***** USER *****/
@@ -192,8 +197,8 @@ body {
 }
 
 .body-chat{
-    position: relative;
     height: 100%;
+    overflow: auto;
 }
 
 .input-message{
@@ -201,11 +206,8 @@ body {
     align-items: center;
     justify-content: space-around;
     width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background-color:rgb(243, 243, 243);
-    height: 40px;
+    background-color:rgba(242, 242, 242, 0.7);
+    height: 50px;
 }
 
 .input-message .message {
@@ -227,24 +229,32 @@ body {
 .my-chat li{
     margin:5px 10px;
     list-style: none;
+    border-radius:8px;
+    padding: 10px;
+    padding-right: 40px;
+    font-size:12px;
+    position: relative;
 }
 
 .my-chat li:first-child{
     margin-top: 20px;
 }
 
+.time-message{
+    color: rgb(190, 190, 190);
+    font-size: 7px;
+    margin-left: 5px;
+    position:absolute;
+    bottom:3px;
+    right: 10px;
+}
+
 .my-message{
     align-self: flex-end;
-    font-size:12px;
     background-color: #a9ff81de;
-    padding: 8px 10px;
-    border-radius:8px;
 }
 
 .your-message{
     align-self: flex-start;
     background-color: #fff;
-    font-size:12px;
-    padding: 6px;
-    border-radius:8px;
 }
