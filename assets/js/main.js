@@ -31,6 +31,15 @@ $(document).ready(function () {
     });
 
     sent.on("click",(function(){
-        // Button sent
+        var testo = newMessage.val().trim();
+
+            if (testo !== ''){
+                var newTextMessage = $('.template li').clone();
+                newTextMessage.prepend(testo);
+                myChat.append(newTextMessage);
+            
+                // pulire l'input dopo l'invio
+                newMessage.val('');
+            }
     }));
 });
