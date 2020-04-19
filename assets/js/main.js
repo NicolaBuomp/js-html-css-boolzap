@@ -2,6 +2,7 @@ $(document).ready(function () {
 
     var myChat = $('.my-chat');
     var newMessage = $('.message');
+    var sent = $('.icon-message-mic i')
 
     newMessage.keyup(function(event){
 
@@ -18,4 +19,18 @@ $(document).ready(function () {
             }
         }
     });
+
+    newMessage.focusin(function(){
+        $('.icon-message-mic i').addClass('fa-paper-plane');
+        $('.icon-message-mic i').removeClass('fa-microphone');
+    });
+
+    newMessage.focusout(function(){
+        $('.icon-message-mic i').addClass('fa-microphone');
+        $('.icon-message-mic i').removeClass('fa-paper-plane');
+    });
+
+    sent.on("click",(function(){
+        // Button sent
+    }));
 });
