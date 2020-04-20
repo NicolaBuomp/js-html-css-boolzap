@@ -3,7 +3,7 @@ $(document).ready(function () {
     var newMessage = $('.message');
     var sent = $('.icon-message-mic i');
     var cercaNome = $('#search-input');
-    
+
     newMessage.keyup(function(event){
 
         if(event.which == 13){
@@ -13,11 +13,7 @@ $(document).ready(function () {
             setTimeout(function(){
                 sentAutoMessage('Va bene'); 
             }, 3000);
-            
         }
-
-
-
     });
     
     sent.on("click", function(){
@@ -39,7 +35,7 @@ $(document).ready(function () {
 
     cercaNome.keyup(function(event){
 
-        if(event.which == 13){
+        if(event.which){
             searchName(cercaNome);
         }
     });
@@ -109,12 +105,53 @@ function addZero(numero) {
 function searchName(input) { 
 
     var sName = input.val();
-    var chat = $('.chat .box-chat');
-
+    var chat = $('.chat');
 
     if ('michele'.includes(sName)){
-        console.log(chat);
+
+        chat.children().hide();
+        chat.children().eq(0).show();
+        
+    } else if ('fabio'.includes(sName)){
+
+        chat.children().hide();
+        chat.children().eq(1).show();
+
+    } else if ('samuele'.includes(sName)){
+
+        chat.children().hide();
+        chat.children().eq(2).show();
+
+    } else if ('alessandro b'.includes(sName)){
+
+        chat.children().hide();
+        chat.children().eq(3).show();
+        
+    } else if ('alessandro l'.includes(sName)){
+
+        chat.children().hide();
+        chat.children().eq(4).show();
+        
+    } else if ('claudia'.includes(sName)){
+
+        chat.children().hide();
+        chat.children().eq(5).show();
+        
+    } else if ('davide'.includes(sName)){
+
+        chat.children().hide();
+        chat.children().eq(6).show();
+        
+    }else if ('federico'.includes(sName)){
+
+        chat.children().hide();
+        chat.children().eq(7).show();
+        
+    } else if (sName == ''){
+        chat.children().show();
     }
+
+
     
     
 }
