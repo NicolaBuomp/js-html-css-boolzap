@@ -15,13 +15,13 @@
 }
 
 .name-chat{
-    font-size:12px;
+    font-size:13px;
     font-weight: bold;
-    margin-bottom:5px;
+    margin-bottom:4px;
 }
 
 .sub-name-chat{
-    font-size:10px;
+    font-size:11px;
     color: rgb(168, 168, 168);
 }
 
@@ -36,10 +36,6 @@ i {
 
 /* ------------- */
 
-
-.top{
-    position:fixed;
-}
 
 body {
     font-family: 'Lato', sans-serif;
@@ -59,20 +55,21 @@ body {
 .container{
     display: flex;
     width: 80%;
-    min-width: 900px;
+    max-width: 1200px;
     height: 95%;
     background-color: #fff;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.6);
 }
 
 #app-left{
+    display: flex;
+    flex-direction: column;
     width: 35%;
     height: 100%;
-    overflow: auto;
     border-right: 1px solid rgba(194, 194, 194, .5);
 }
 
-/***** USER *****/
+/***** HEADER *****/
 
 .top-bar-user{
     display: flex;
@@ -151,7 +148,7 @@ body {
     padding: 0 15px;
 }
 
-.icon-input-text .input-chat{
+#search-input{
     margin-left:10px;
     border: none;
     width: 70%;
@@ -162,11 +159,13 @@ body {
 /***** Chat *****/
 
 .chat{
-    overflow: auto;
+    overflow-y: auto;
+    flex-grow: 1;
 }
 
 
 .box-chat{
+    cursor: pointer;
     display: flex;
     justify-content:space-between;
     align-items:center;
@@ -205,11 +204,64 @@ body {
     background-image: url(../img/mine.jpg);
 }
 
+/* 
+ Corpo della CHAT
+*/
 .body-chat{
     height: 100%;
     overflow: auto;
 }
 
+.my-chat{
+    display: flex;
+    flex-direction: column;
+}
+
+.my-chat li{
+    max-width: 200px;
+    margin:5px 10px;
+    list-style: none;
+    border-radius:8px;
+    padding: 10px;
+    padding-right: 40px;
+    font-size:12px;
+    position: relative;
+}
+
+.my-chat li:first-child{
+    margin-top: 20px;
+}
+
+.time-message{
+    color: rgb(190, 190, 190);
+    font-size: 9px;
+    margin-left: 5px;
+    position:absolute;
+    bottom:3px;
+    right: 10px;
+}
+
+.my-message{
+    align-self: flex-end;
+    background-color: #a9ff81de;
+}
+
+.your-message{
+    align-self: flex-start;
+    background-color: #fff;
+}
+
+.messages-chat{
+    display: none;
+}
+
+.messages-chat.active{
+    display: block;
+}
+
+/* 
+ Input del Messaggio
+ */
 .input-message{
     display: flex;
     align-items: center;
@@ -234,42 +286,6 @@ body {
 
 .input-message i{
     font-size: 20px;
+    color:rgb(155, 155, 155);
 }
 
-.my-chat{
-    display: flex;
-    flex-direction: column;
-}
-
-.my-chat li{
-    margin:5px 10px;
-    list-style: none;
-    border-radius:8px;
-    padding: 10px;
-    padding-right: 40px;
-    font-size:12px;
-    position: relative;
-}
-
-.my-chat li:first-child{
-    margin-top: 20px;
-}
-
-.time-message{
-    color: rgb(190, 190, 190);
-    font-size: 7px;
-    margin-left: 5px;
-    position:absolute;
-    bottom:3px;
-    right: 10px;
-}
-
-.my-message{
-    align-self: flex-end;
-    background-color: #a9ff81de;
-}
-
-.your-message{
-    align-self: flex-start;
-    background-color: #fff;
-}

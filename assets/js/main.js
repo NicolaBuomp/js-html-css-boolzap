@@ -1,45 +1,120 @@
 $(document).ready(function () {
 
-    var myChat = $('.my-chat');
     var newMessage = $('.message');
-    var sent = $('.icon-message-mic i')
-
+    var sent = $('.icon-message-mic i');
+    var cercaNome = $('#search-input');
+    
     newMessage.keyup(function(event){
 
         if(event.which == 13){
-            var testo = $(this).val().trim();
+            sentMessage(newMessage);
 
-            if (testo !== ''){
-                var newTextMessage = $('.template li').clone();
-                newTextMessage.prepend(testo);
-                myChat.append(newTextMessage);
+                    // risposta automatica
+            setTimeout(function(){
+                sentAutoMessage('Va bene'); 
+            }, 3000);
             
-                // pulire l'input dopo l'invio
-                newMessage.val('');
-            }
         }
+
+
+
+    });
+    
+    sent.on("click", function(){
+        sentMessage(newMessage);
+
+        // risposta automatica
+        setTimeout(function(){
+            sentAutoMessage('Va bene'); 
+        }, 3000);
     });
 
     newMessage.focusin(function(){
-        $('.icon-message-mic i').addClass('fa-paper-plane');
-        $('.icon-message-mic i').removeClass('fa-microphone');
+        sent.toggleClass('fa-microphone fa-paper-plane');
     });
 
     newMessage.focusout(function(){
-        $('.icon-message-mic i').addClass('fa-microphone');
-        $('.icon-message-mic i').removeClass('fa-paper-plane');
+        sent.toggleClass('fa-microphone fa-paper-plane');
     });
 
-    sent.on("click",(function(){
-        var testo = newMessage.val().trim();
+    cercaNome.keyup(function(event){
 
-            if (testo !== ''){
-                var newTextMessage = $('.template li').clone();
-                newTextMessage.prepend(testo);
-                myChat.append(newTextMessage);
-            
-                // pulire l'input dopo l'invio
-                newMessage.val('');
-            }
-    }));
+        if(event.which == 13){
+            searchName(cercaNome);
+        }
+    });
 });
+
+
+// Function
+
+function sentMessage(input){
+
+    var chatContainer = $(".body-chat");
+
+    var testo = input.val().trim();
+
+    if (testo.length > 0){
+
+        var newTextMessage = $('.template .my-message').clone();
+
+        newTextMessage.prepend(testo);
+
+        $('.messages-chat.active .my-chat').append(newTextMessage);
+            
+
+        var data = new Date();
+        var ora = addZero( data.getHours() );
+        var minuti = addZero( data.getMinutes() );
+        var orario = ora + ':' + minuti;
+        newTextMessage.children('.time-message').text(orario);
+
+         // pulire l'input dopo l'invio
+        input.val('');
+
+        chatContainer.scrollTop(chatContainer.prop('scrollHeight'));
+
+    }
+
+}
+
+function sentAutoMessage(mess){
+
+    var chatContainer = $(".body-chat");
+
+        var newTextMessage = $('.template .your-message').clone();
+
+        newTextMessage.prepend(mess);
+
+        $('.messages-chat.active .my-chat').append(newTextMessage);
+
+        var data = new Date();
+        var ora = addZero( data.getHours() );
+        var minuti = addZero( data.getMinutes() );
+        var orario = ora + ':' + minuti;
+        newTextMessage.children('.time-message').text(orario);
+
+        chatContainer.scrollTop(chatContainer.prop('scrollHeight'));
+
+}
+
+function addZero(numero) {
+    if(numero < 10) {
+        numero = '0' + numero;
+    }
+    
+    return numero;
+}
+
+function searchName(input) { 
+
+    var sName = input.val();
+    var chat = $('.chat .box-chat');
+
+
+    if ('michele'.includes(sName)){
+        console.log(chat);
+    }
+    
+    
+}

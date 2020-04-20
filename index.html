@@ -17,6 +17,7 @@
 
         <section id="app-left">
 
+            <!-- Heaader -->
             <div class="top-bar-user">
                 <div class="img-user">
                     <img src="assets/img/avatar_io.jpg" alt="mio avatar">
@@ -30,6 +31,7 @@
 
             </div>
 
+            <!-- Notifiche -->
             <div class="notification">
                 <div class="icon-noti">
                     <i class="fas fa-bell-slash"></i>
@@ -40,16 +42,20 @@
                 </div>
             </div>
 
+            <!-- Input ricerca -->
             <div class="input-text">
                 <div class="icon-input-text">
-                    <i class="fas fa-search"></i>
-                    <input type="text" class="input-chat" placeholder="Cerca o inizia una nuova chat">
+                    <label for="search-input">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input type="text" id="search-input" name="search-input" placeholder="Cerca o inizia una nuova chat">
                 </div>
                 
             </div>
 
+            <!-- Conversazioni -->
             <div class="chat">
-                <div class="box-chat selected">
+                <div class="box-chat selected" data-conversazione="0">
                     <div class="user-chat">
                         <img src="assets/img/avatar_1.jpg" alt="">
                         <div class="user-chat-name">
@@ -62,7 +68,8 @@
                        <span>17.53</span>
                     </div>
                 </div>
-                <div class="box-chat">
+
+                <div class="box-chat" data-conversazione="1">
                     <div class="user-chat">
                         <img src="assets/img/avatar_2.jpg" alt="">
                         <div class="user-chat-name">
@@ -76,9 +83,7 @@
                     </div>
                 </div>
 
-                <!-- cccccccccccccccccccc -->
-
-                <div class="box-chat">
+                <div class="box-chat" data-conversazione="2">
                     <div class="user-chat">
                         <img src="assets/img/avatar_3.jpg" alt="">
                         <div class="user-chat-name">
@@ -92,104 +97,7 @@
                     </div>
                 </div>
 
-                <div class="box-chat">
-                    <div class="user-chat">
-                        <img src="assets/img/avatar_3.jpg" alt="">
-                        <div class="user-chat-name">
-                            <p class="name-chat">Samuele</p>
-                            <p class="sub-name-chat">Non poteva essere altrimenti</p>
-                        </div>
-                    </div>
-
-                    <div class="time-chat">
-                       <span>17.53</span>
-                    </div>
-                </div>
-
-                <div class="box-chat">
-                    <div class="user-chat">
-                        <img src="assets/img/avatar_3.jpg" alt="">
-                        <div class="user-chat-name">
-                            <p class="name-chat">Samuele</p>
-                            <p class="sub-name-chat">Non poteva essere altrimenti</p>
-                        </div>
-                    </div>
-
-                    <div class="time-chat">
-                       <span>17.53</span>
-                    </div>
-                </div>
-
-                <div class="box-chat">
-                    <div class="user-chat">
-                        <img src="assets/img/avatar_3.jpg" alt="">
-                        <div class="user-chat-name">
-                            <p class="name-chat">Samuele</p>
-                            <p class="sub-name-chat">Non poteva essere altrimenti</p>
-                        </div>
-                    </div>
-
-                    <div class="time-chat">
-                       <span>17.53</span>
-                    </div>
-                </div>
-
-                <div class="box-chat">
-                    <div class="user-chat">
-                        <img src="assets/img/avatar_3.jpg" alt="">
-                        <div class="user-chat-name">
-                            <p class="name-chat">Samuele</p>
-                            <p class="sub-name-chat">Non poteva essere altrimenti</p>
-                        </div>
-                    </div>
-
-                    <div class="time-chat">
-                       <span>17.53</span>
-                    </div>
-                </div>
-
-                <div class="box-chat">
-                    <div class="user-chat">
-                        <img src="assets/img/avatar_3.jpg" alt="">
-                        <div class="user-chat-name">
-                            <p class="name-chat">Samuele</p>
-                            <p class="sub-name-chat">Non poteva essere altrimenti</p>
-                        </div>
-                    </div>
-
-                    <div class="time-chat">
-                       <span>17.53</span>
-                    </div>
-                </div>
-
-                <div class="box-chat">
-                    <div class="user-chat">
-                        <img src="assets/img/avatar_3.jpg" alt="">
-                        <div class="user-chat-name">
-                            <p class="name-chat">Samuele</p>
-                            <p class="sub-name-chat">Non poteva essere altrimenti</p>
-                        </div>
-                    </div>
-
-                    <div class="time-chat">
-                       <span>17.53</span>
-                    </div>
-                </div>
-                <!-- ccccccccccccccccccc -->
-                <div class="box-chat">
-                    <div class="user-chat">
-                        <img src="assets/img/avatar_3.jpg" alt="">
-                        <div class="user-chat-name">
-                            <p class="name-chat">Samuele</p>
-                            <p class="sub-name-chat">Non poteva essere altrimenti</p>
-                        </div>
-                    </div>
-
-                    <div class="time-chat">
-                       <span>17.53</span>
-                    </div>
-                </div>
-                <div class="box-chat">
+                <div class="box-chat" data-conversazione="3">
                     <div class="user-chat">
                         <img src="assets/img/avatar_4.jpg" alt="">
                         <div class="user-chat-name">
@@ -202,7 +110,8 @@
                        <span>17.53</span>
                     </div>
                 </div>
-                <div class="box-chat">
+
+                <div class="box-chat" data-conversazione="4">
                     <div class="user-chat">
                         <img src="assets/img/avatar_5.jpg" alt="">
                         <div class="user-chat-name">
@@ -215,7 +124,8 @@
                        <span>17.53</span>
                     </div>
                 </div>
-                <div class="box-chat">
+
+                <div class="box-chat" data-conversazione="5">
                     <div class="user-chat">
                         <img src="assets/img/avatar_6.jpg" alt="">
                         <div class="user-chat-name">
@@ -228,7 +138,8 @@
                        <span>17.53</span>
                     </div>
                 </div>
-                <div class="box-chat">
+
+                <div class="box-chat" data-conversazione="6">
                     <div class="user-chat">
                         <img src="assets/img/avatar_7.jpg" alt="">
                         <div class="user-chat-name">
@@ -241,7 +152,8 @@
                        <span>17.53</span>
                     </div>
                 </div>
-                <div class="box-chat">
+
+                <div class="box-chat" data-conversazione="7">
                     <div class="user-chat">
                         <img src="assets/img/avatar_8.jpg" alt="">
                         <div class="user-chat-name">
@@ -254,11 +166,17 @@
                        <span>17.53</span>
                     </div>
                 </div>
+
             </div>
 
+            
+
         </section>
+
+        <!-- App Right -->
         <section id="app-right">
 
+            <!-- Header -->
             <div class="top-bar-user">
                 <div class="img-user">
                     <img src="assets/img/avatar_1.jpg" alt="mio avatar">
@@ -276,21 +194,153 @@
 
             </div>
 
+            <!-- Corpo della Chat -->
             <div class="body-chat">
 
-                <ul class="my-chat">
-                    <li class="my-message">Ciao<span class="time-message">17.53</span></li>
-                    <li class="your-message">Ciao, come stai ?<span class="time-message">17.53</span></li>
-                    <li class="my-message">Tutto bene <span class="time-message">17.53</span></li>
-                </ul>
+                <div class="messages-chat active" data-conversazione="0">
 
-                <!-- template JQ -->
-                <ul class="template">
-                    <li class="my-message"><span class="time-message">17.53</span></li>
-                </ul>
+                    <ul class="my-chat" >
+                        <li class="my-message">Ciao<span class="time-message">17.53</span></li>
+                        <li class="your-message">Ciao, come stai ?<span class="time-message">17.53</span></li>
+                        <li class="my-message">Tutto bene, tu? <span class="time-message">17.53</span></li>
+                        <li class="your-message">Tutto bene anche io, grazie!<span class="time-message">17.53</span></li>
+                    </ul>
 
+                </div>
+
+                <div class="messages-chat" data-conversazione="1">
+
+                    <ul class="my-chat" >
+                        <li class="my-message">Ciao<span class="time-message">17.53</span></li>
+                        <li class="your-message">Ciao, come stai ?<span class="time-message">17.53</span></li>
+                        <li class="my-message">Tutto bene <span class="time-message">17.53</span></li>
+                    </ul>
+
+                </div>
+
+                <div class="messages-chat" data-conversazione="2">
+
+                    <ul class="my-chat" >
+                        <li class="my-message">Ciao<span class="time-message">17.53</span></li>
+                        <li class="your-message">Ciao, come stai ?<span class="time-message">17.53</span></li>
+                        <li class="my-message">Tutto bene <span class="time-message">17.53</span></li>
+                    </ul>
+
+                </div>
+
+                <div class="messages-chat" data-conversazione="3">
+
+                    <ul class="my-chat" >
+                        <li class="my-message">Ciao<span class="time-message">17.53</span></li>
+                        <li class="your-message">Ciao, come stai ?<span class="time-message">17.53</span></li>
+                        <li class="my-message">Tutto bene <span class="time-message">17.53</span></li>
+                    </ul>
+
+                </div>
+
+                <div class="messages-chat" data-conversazione="4">
+
+                    <ul class="my-chat" >
+                        <li class="my-message">Ciao<span class="time-message">17.53</span></li>
+                        <li class="your-message">Ciao, come stai ?<span class="time-message">17.53</span></li>
+                        <li class="my-message">Tutto bene <span class="time-message">17.53</span></li>
+                    </ul>
+
+                </div>
+
+                <div class="messages-chat" data-conversazione="5">
+
+                    <ul class="my-chat" >
+                        <li class="my-message">Ciao<span class="time-message">17.53</span></li>
+                        <li class="your-message">Ciao, come stai ?<span class="time-message">17.53</span></li>
+                        <li class="my-message">Tutto bene <span class="time-message">17.53</span></li>
+                    </ul>
+
+                </div>
+
+                <div class="messages-chat" data-conversazione="6">
+
+                    <ul class="my-chat" >
+                        <li class="my-message">Ciao<span class="time-message">17.53</span></li>
+                        <li class="your-message">Ciao, come stai ?<span class="time-message">17.53</span></li>
+                        <li class="my-message">Tutto bene <span class="time-message">17.53</span></li>
+                    </ul>
+
+                </div>
+
+                <div class="messages-chat" data-conversazione="7">
+
+                    <ul class="my-chat" >
+                        <li class="my-message">Ciao<span class="time-message">17.53</span></li>
+                        <li class="your-message">Ciao, come stai ?<span class="time-message">17.53</span></li>
+                        <li class="my-message">Tutto bene <span class="time-message">17.53</span></li>
+                    </ul>
+
+                </div>
+
+                <div class="messages-chat" data-conversazione="8">
+
+                    <ul class="my-chat" >
+                        <li class="my-message">Ciao<span class="time-message">17.53</span></li>
+                        <li class="your-message">Ciao, come stai ?<span class="time-message">17.53</span></li>
+                        <li class="my-message">Tutto bene <span class="time-message">17.53</span></li>
+                    </ul>
+
+                </div>
+
+                <div class="messages-chat" data-conversazione="9">
+
+                    <ul class="my-chat" >
+                        <li class="my-message">Ciao<span class="time-message">17.53</span></li>
+                        <li class="your-message">Ciao, come stai ?<span class="time-message">17.53</span></li>
+                        <li class="my-message">Tutto bene <span class="time-message">17.53</span></li>
+                    </ul>
+
+                </div>
+
+                <div class="messages-chat" data-conversazione="10">
+
+                    <ul class="my-chat" >
+                        <li class="my-message">Ciao<span class="time-message">17.53</span></li>
+                        <li class="your-message">Ciao, come stai ?<span class="time-message">17.53</span></li>
+                        <li class="my-message">Tutto bene <span class="time-message">17.53</span></li>
+                    </ul>
+
+                </div>
+
+                <div class="messages-chat" data-conversazione="11">
+
+                    <ul class="my-chat" >
+                        <li class="my-message">Ciao<span class="time-message">17.53</span></li>
+                        <li class="your-message">Ciao, come stai ?<span class="time-message">17.53</span></li>
+                        <li class="my-message">Tutto bene <span class="time-message">17.53</span></li>
+                    </ul>
+
+                </div>
+
+                <div class="messages-chat" data-conversazione="12">
+
+                    <ul class="my-chat" >
+                        <li class="my-message">Ciao<span class="time-message">17.53</span></li>
+                        <li class="your-message">Ciao, come stai ?<span class="time-message">17.53</span></li>
+                        <li class="my-message">Tutto bene <span class="time-message">17.53</span></li>
+                    </ul>
+
+                </div>
+
+                <div class="messages-chat" data-conversazione="13">
+
+                    <ul class="my-chat" >
+                        <li class="my-message">Ciao<span class="time-message">17.53</span></li>
+                        <li class="your-message">Ciao, come stai ?<span class="time-message">17.53</span></li>
+                        <li class="my-message">Tutto bene <span class="time-message">17.53</span></li>
+                    </ul>
+
+                </div>
                 
             </div>
+
+            <!-- Input Messaggio  -->
                 <div class="input-message">
                     <div class="icon-message">
                         <i class="far fa-smile-beam"></i>
@@ -304,6 +354,14 @@
         </section>
 
     </div>
+
+        
+    <!-- template JQ -->
+    <ul class="template">
+        <li class="my-message"><span class="time-message">17.53</span></li>
+        <li class="your-message"><span class="time-message">17.53</span></li>
+    </ul>
+
 
     <!-- JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
