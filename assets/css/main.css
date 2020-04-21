@@ -71,7 +71,8 @@ body {
 
 /***** HEADER *****/
 
-.top-bar-user{
+.top-bar-user,
+.top-bar-user-chat{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -238,7 +239,23 @@ body {
     margin-left: 5px;
     position:absolute;
     bottom:3px;
+    right: 8px;
+}
+
+.drop-delete{
+    opacity: 0;
+    padding:2px 5px;
+    cursor: pointer;
+    color: rgb(190, 190, 190);
+    font-size: 12px;
+    margin-left: 5px;
+    position:absolute;
+    top:2px;
     right: 10px;
+}
+
+.drop-delete:hover{
+    opacity: 1;
 }
 
 .my-message{

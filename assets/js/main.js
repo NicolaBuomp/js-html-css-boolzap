@@ -3,6 +3,7 @@ $(document).ready(function () {
     var newMessage = $('.message');
     var sent = $('.icon-message-mic i');
     var cercaNome = $('#search-input');
+    var lastAccess = $('.top-bar-user-chat').find('.user-chat-name .sub-name-chat');
 
 
     // invio messaggio con il tasto invio
@@ -11,21 +12,42 @@ $(document).ready(function () {
         if(event.which == 13){
             sentMessage(newMessage);
 
-                    // risposta automatica
+            // Online
+            setTimeout(function(){
+                lastAccess.text('Online');
+            },1000);
+
+            // risposta automatica
             setTimeout(function(){
                 sentAutoMessage('Va bene'); 
             }, 3000);
-        }
+
+            // Offline
+            setTimeout(function(){
+                lastAccess.text('Ultimo accesso alle ' + timeMessage());
+            },5000);
+
+        };
     });
     
     // Invia messaggio con il click
     sent.on("click", function(){
         sentMessage(newMessage);
 
+        // Online
+        setTimeout(function(){
+            lastAccess.text('Online');
+        },1000);
+
         // risposta automatica
         setTimeout(function(){
             sentAutoMessage('Va bene'); 
         }, 3000);
+
+        // Offline
+        setTimeout(function(){
+            lastAccess.text('Ultimo accesso alle ' + timeMessage());
+        },5000);
     });
 
 
@@ -61,6 +83,37 @@ $(document).ready(function () {
         });
         
     });
+
+    $('.box-chat').click(function() {
+
+        var chat = $(this).attr('data-conversazione');
+        
+        // reset
+        $('.messages-chat').removeClass('active');
+        $('.box-chat').removeClass('selected');
+
+        
+        // Show active
+        $('.messages-chat[data-conversazione="' + chat + '"]').addClass('active');
+        $('.box-chat[data-conversazione="' + chat + '"]').addClass('selected');
+
+        // Recupero nome chat
+        var nameContact = $(this).find('.name-chat');
+        var nameChat = $('.top-bar-user').find('.name-chat');
+
+        // Cambio nome chat
+        nameChat.text(nameContact.text());
+        
+        // Recupero image chat
+        var imgContact = $(this).find('.user-chat img').attr('src');
+        var imgChat = $('.top-bar-user-chat').find('.img-user img');
+
+        // cambio image chat
+        imgChat.attr('src', imgContact);
+
+    });
+    
+
 });
 
 
@@ -93,29 +146,32 @@ function sentMessage(input){
         // Mostra sempre unltimo messaggio 
         chatContainer.scrollTop(chatContainer.prop('scrollHeight'));
 
-    }
+    };
 
-}
+};
+
 
 // Function Auto Risposta
 function sentAutoMessage(mess){
 
     var chatContainer = $(".body-chat");
 
-        var newTextMessage = $('.template .your-message').clone();
+    var newTextMessage = $('.template .your-message').clone();
 
-        newTextMessage.prepend(mess);
 
-        $('.messages-chat.active .my-chat').append(newTextMessage);
+    newTextMessage.prepend(mess);
 
-        // Time
-        var orario = timeMessage();
-        newTextMessage.children('.time-message').text(orario);
+    $('.messages-chat.active .my-chat').append(newTextMessage);
 
-        // Mostra sempre unltimo messaggio 
-        chatContainer.scrollTop(chatContainer.prop('scrollHeight'));
+    // Time
+    var orario = timeMessage();
+    newTextMessage.children('.time-message').text(orario);
 
-}
+    // Mostra sempre unltimo messaggio 
+    chatContainer.scrollTop(chatContainer.prop('scrollHeight'));
+
+
+};
 
 // TimeMesage
 function timeMessage(){
@@ -127,7 +183,7 @@ function timeMessage(){
 
     return orario;
 
-}
+};
 
 function addZero(numero) {
     if(numero < 10) {
@@ -135,6 +191,4 @@ function addZero(numero) {
     }
     
     return numero;
-}
-
-// Function ricerca per nome
+};
