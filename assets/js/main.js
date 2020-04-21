@@ -113,6 +113,11 @@ $(document).ready(function () {
 
     });
     
+    $('.drop-delete').click(function(){
+        
+        $('.dropdown').toggleClass('active');
+
+    });
 
 });
 

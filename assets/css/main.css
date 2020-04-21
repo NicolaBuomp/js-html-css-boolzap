@@ -254,8 +254,28 @@ body {
     right: 10px;
 }
 
+.my-message .dropdown{
+    position:absolute;
+    top: 40px;
+    right: 2px;
+}
+
+.your-message .dropdown{
+    position:absolute;
+    top: 40px;
+    left: 2px;
+}
+
+
+.dropdown{
+    display: none;
+    background-color: #fff;
+    width: 175px;
+}
+
+
 .drop-delete:hover{
-    opacity: 1;
+    opacity:1;
 }
 
 .my-message{
@@ -272,7 +292,7 @@ body {
     display: none;
 }
 
-.messages-chat.active{
+.active{
     display: block;
 }
 

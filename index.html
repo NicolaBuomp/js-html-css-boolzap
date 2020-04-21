@@ -200,10 +200,10 @@
                 <div class="messages-chat active" data-conversazione="0">
 
                     <ul class="my-chat" >
-                        <li class="my-message">Ciao, Michele!<span class="time-message">17.53</span></li>
-                        <li class="your-message">Ciao<span class="time-message">17.53</span></li>
-                        <li class="my-message">Tutto bene? <span class="time-message">17.53</span></li>
-                        <li class="your-message">Tutto bene, e tu ?<span class="time-message">17.53</span></li>
+                        <li class="my-message">Ciao, Michele!<span class="drop-delete"><i class="fas fa-angle-down"></i></span><span class="time-message">17.53</span></li>
+                        <li class="your-message">Ciao<span class="drop-delete"><i class="fas fa-angle-down"></i></span><span class="time-message">17.53</span></li>
+                        <li class="my-message">Tutto bene? <span class="drop-delete"><i class="fas fa-angle-down"></i></span><span class="time-message">17.53</span></li>
+                        <li class="your-message">Tutto bene, e tu ?<span class="drop-delete"><i class="fas fa-angle-down"></i></span><span class="time-message">17.53</span></li>
                     </ul>
 
                 </div>
@@ -298,8 +298,42 @@
         
     <!-- template JQ -->
     <ul class="template">
-        <li class="my-message"><span class="drop-delete"><i class="fas fa-angle-down"></i></span><span class="time-message">17.53</span></li>
-        <li class="your-message"><span class="drop-delete"><i class="fas fa-angle-down"></i></span><span class="time-message">17.53</span></li>
+        <li class="my-message">
+            <span class="drop-delete">
+                <i class="fas fa-angle-down"></i>
+                <div class="dropdown">
+                    <ul class="dropdown-list">
+                        <li>
+                            Info messaggio
+                        </li>
+                        <li>
+                            Cancella messaggio
+                        </li>
+                    </ul>
+                </div>
+            </span>
+            <span class="time-message">
+                17.53
+            </span>
+        </li>
+        <li class="your-message">
+            <span class="drop-delete">
+                <i class="fas fa-angle-down"></i>
+                <div class="dropdown">
+                    <ul class="dropdown-list">
+                        <li>
+                            Info messaggio
+                        </li>
+                        <li>
+                            Cancella messaggio
+                        </li>
+                    </ul>
+                </div>
+            </span>
+            <span class="time-message">
+                17.53
+            </span>
+        </li>
     </ul>
 
 
