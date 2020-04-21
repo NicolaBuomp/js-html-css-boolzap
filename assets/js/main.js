@@ -4,6 +4,8 @@ $(document).ready(function () {
     var sent = $('.icon-message-mic i');
     var cercaNome = $('#search-input');
 
+
+    // invio messaggio con il tasto invio
     newMessage.keyup(function(event){
 
         if(event.which == 13){
@@ -16,6 +18,7 @@ $(document).ready(function () {
         }
     });
     
+    // Invia messaggio con il click
     sent.on("click", function(){
         sentMessage(newMessage);
 
@@ -25,6 +28,8 @@ $(document).ready(function () {
         }, 3000);
     });
 
+
+    // cambio l'icona con il focus sull'input
     newMessage.focusin(function(){
         sent.toggleClass('fa-microphone fa-paper-plane');
     });
@@ -32,18 +37,38 @@ $(document).ready(function () {
     newMessage.focusout(function(){
         sent.toggleClass('fa-microphone fa-paper-plane');
     });
+    // ---
 
-    cercaNome.keyup(function(event){
 
-        if(event.which){
-            searchName(cercaNome);
-        }
+
+    // Cerca nomi delle chat
+    cercaNome.keyup(function(){
+
+        var serach = $(this).val().toLowerCase().trim();
+
+        $('.box-chat').each(function() {
+
+            // Prendo i nomi delle chat
+            var nameContact = $(this).find('.user-chat-name .name-chat').text().toLowerCase();
+
+            // 
+            if(nameContact.includes(serach)){
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+            
+        });
+        
     });
 });
 
 
-// Function
+/**
+ * FUNCTION
+ */
 
+// Function mio messaggio
 function sentMessage(input){
 
     var chatContainer = $(".body-chat");
@@ -57,23 +82,22 @@ function sentMessage(input){
         newTextMessage.prepend(testo);
 
         $('.messages-chat.active .my-chat').append(newTextMessage);
-            
-
-        var data = new Date();
-        var ora = addZero( data.getHours() );
-        var minuti = addZero( data.getMinutes() );
-        var orario = ora + ':' + minuti;
+           
+        // Time
+        var orario = timeMessage();
         newTextMessage.children('.time-message').text(orario);
 
          // pulire l'input dopo l'invio
         input.val('');
 
+        // Mostra sempre unltimo messaggio 
         chatContainer.scrollTop(chatContainer.prop('scrollHeight'));
 
     }
 
 }
 
+// Function Auto Risposta
 function sentAutoMessage(mess){
 
     var chatContainer = $(".body-chat");
@@ -84,13 +108,24 @@ function sentAutoMessage(mess){
 
         $('.messages-chat.active .my-chat').append(newTextMessage);
 
-        var data = new Date();
-        var ora = addZero( data.getHours() );
-        var minuti = addZero( data.getMinutes() );
-        var orario = ora + ':' + minuti;
+        // Time
+        var orario = timeMessage();
         newTextMessage.children('.time-message').text(orario);
 
+        // Mostra sempre unltimo messaggio 
         chatContainer.scrollTop(chatContainer.prop('scrollHeight'));
+
+}
+
+// TimeMesage
+function timeMessage(){
+
+    var data = new Date();
+    var ora = addZero( data.getHours() );
+    var minuti = addZero( data.getMinutes() );
+    var orario = ora + ':' + minuti;
+
+    return orario;
 
 }
 
@@ -102,56 +137,4 @@ function addZero(numero) {
     return numero;
 }
 
-function searchName(input) { 
-
-    var sName = input.val();
-    var chat = $('.chat');
-
-    if ('michele'.includes(sName)){
-
-        chat.children().hide();
-        chat.children().eq(0).show();
-        
-    } else if ('fabio'.includes(sName)){
-
-        chat.children().hide();
-        chat.children().eq(1).show();
-
-    } else if ('samuele'.includes(sName)){
-
-        chat.children().hide();
-        chat.children().eq(2).show();
-
-    } else if ('alessandro b'.includes(sName)){
-
-        chat.children().hide();
-        chat.children().eq(3).show();
-        
-    } else if ('alessandro l'.includes(sName)){
-
-        chat.children().hide();
-        chat.children().eq(4).show();
-        
-    } else if ('claudia'.includes(sName)){
-
-        chat.children().hide();
-        chat.children().eq(5).show();
-        
-    } else if ('davide'.includes(sName)){
-
-        chat.children().hide();
-        chat.children().eq(6).show();
-        
-    }else if ('federico'.includes(sName)){
-
-        chat.children().hide();
-        chat.children().eq(7).show();
-        
-    } else if (sName == ''){
-        chat.children().show();
-    }
-
-
-    
-    
-}
+// Function ricerca per nome
