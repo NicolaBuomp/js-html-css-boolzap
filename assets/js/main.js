@@ -99,7 +99,7 @@ $(document).ready(function () {
 
         // Recupero nome chat
         var nameContact = $(this).find('.name-chat');
-        var nameChat = $('.top-bar-user').find('.name-chat');
+        var nameChat = $('.top-bar-user-chat').find('.name-chat');
 
         // Cambio nome chat
         nameChat.text(nameContact.text());
@@ -110,14 +110,15 @@ $(document).ready(function () {
 
         // cambio image chat
         imgChat.attr('src', imgContact);
+         
 
     });
     
-    $('.drop-delete').click(function(){
+    // $('.drop-delete').click(function(){
         
-        $('.dropdown').toggleClass('active');
+    //     $('.dropdown').toggleClass('active');
 
-    });
+    // });
 
 });
 
@@ -151,6 +152,15 @@ function sentMessage(input){
         // Mostra sempre unltimo messaggio 
         chatContainer.scrollTop(chatContainer.prop('scrollHeight'));
 
+        // imposto orario ultimo messaggio in chat
+        var timeChat = $('.box-chat.selected').find('.time-chat');
+        timeChat.text(orario);
+
+        // imposto ultimo messaggio in chat
+        var lastMessage = $('.box-chat.selected').find('.sub-name-chat');
+        lastMessage.text(testo);
+        
+
     };
 
 };
@@ -175,6 +185,14 @@ function sentAutoMessage(mess){
     // Mostra sempre unltimo messaggio 
     chatContainer.scrollTop(chatContainer.prop('scrollHeight'));
 
+    // imposto orario ultimo messaggio in chat
+    var timeChat = $('.box-chat.selected').find('.time-chat');
+    timeChat.text(orario);
+
+    // imposto ultimo messaggio in chat
+    var lastMessage = $('.box-chat.selected').find('.sub-name-chat');
+    lastMessage.text(mess);
+         
 
 };
 
